@@ -9,10 +9,10 @@ import Footer from '../parts/Footer'
 // import Header from '../parts/HEader'
 
 
-export default function HomePage(props) {
+export default function HomePage() {
   return (
     <>
-        <Header></Header>
+        <Header theme="white" position="absolute"></Header>
         <Hero/>
         <BrowseRoom/>
         <JustArrived/>
