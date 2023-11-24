@@ -6,7 +6,7 @@ import Suggestion from '../parts/Details/Suggestion'
 // import Hero from '../parts/Hero'
 // import JustArrived from '../parts/HomePage/JustArrived'
 // import BrowseRoom from '../parts/HomePage/BrowseRoom'
-import Clients from '../parts/Clients'
+// import Clients from '../parts/Clients'
 import Sitemap from '../parts/Sitemap'
 import Footer from '../parts/Footer'
 // import Header from '../parts/HEader'
@@ -21,7 +21,7 @@ export default function Details() {
             {url: "/categories/91231", name: "Office Room"},
             {url: "/categories/91231/products/7888", name: "Details"},
         ]}/>
-        <Clients/>
+        {/* <Clients/> */}
         <ProductDetails/>
         <Suggestion/>
         <Sitemap/>
