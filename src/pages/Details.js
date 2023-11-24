@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '../parts/Header'
 import Breadcrumb from '../components/Breadcrumb/Index'
+import ProductDetails from '../parts/Details/ProductDetails'
+import Suggestion from '../parts/Details/Suggestion'
 // import Hero from '../parts/Hero'
 // import JustArrived from '../parts/HomePage/JustArrived'
 // import BrowseRoom from '../parts/HomePage/BrowseRoom'
@@ -20,6 +22,8 @@ export default function Details() {
             {url: "/categories/91231/products/7888", name: "Details"},
         ]}/>
         <Clients/>
+        <ProductDetails/>
+        <Suggestion/>
         <Sitemap/>
         <Footer/>
     </>
