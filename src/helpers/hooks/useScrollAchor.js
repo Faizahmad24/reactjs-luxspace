@@ -14,7 +14,9 @@ export default function useScrollAchor() {
               document.querySelector(this.getAttribute("href")).scrollIntoView({
                 behavior: "smooth",
               });
+              console.log(element)
           });
+
         }
         
     

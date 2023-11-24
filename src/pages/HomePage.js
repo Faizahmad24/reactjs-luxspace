@@ -9,9 +9,11 @@ import Footer from '../parts/Footer'
 
 // Custom Hooks
 import useScrollAchor from '../helpers/hooks/useScrollAchor'
+import useModalDOM from '../helpers/hooks/useModalDOM'
 
 export default function HomePage() {
   useScrollAchor();
+  useModalDOM();
   return (
     <>
         <Header theme="white" position="absolute"></Header>
