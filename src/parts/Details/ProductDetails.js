@@ -1,29 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function ProductDetails() {
+export default function ProductDetails({data}) {
+    // console.log("product detail : ", data)
+    const [slider, setSlider] = useState(() => data.imgUrls?.[0] || "")
+    console.log("slider", slider)
   return (
         <section className="container mx-auto">
             <div className="flex flex-wrap my-4 md:my-12">
                 <div className="w-full md:hidden px-4">
-                <h2 className="text-5xl font-semibold">Chair Thatty</h2>
-                <span className="text-xl">IDR 12.000.000</span>
+                <h2 className="text-5xl font-semibold">{data.title}</h2>
+                <span className="text-xl">IDR {data.price}</span>
                 </div>
                 <div className="flex-1">
                 <div className="slider">
                     <div className="thumbnail">
-                    <div className="px-2">
-                        <div
-                        className="item selected"
-                        data-img="/images/content/showcase-1.front.jpg"
-                        >
-                        <img
-                            src="/images/content/showcase-1.front.jpg"
-                            alt="front"
-                            className="object-cover w-full h-full rounded-lg"
-                        />
+                    {data?.imgUrls?.map((item) => {
+                        return (
+                            <div className="px-2" key={item} onClick={() => setSlider(item)}>
+                            <div
+                            className={["item", slider === item ? "bg-gray-100 selected" : ""].join(" ")}
+                            // className={["item", slider === item ? "bg-gray-100 selected" : ""].join(" ")}
+                            // data-img="/images/content/showcase-1.front.jpg"
+                            >
+                            <img
+                                src={item}
+                                alt={item}
+                                className="object-cover w-full h-full rounded-lg"
+                            />
+                            </div>
                         </div>
-                    </div>
-                    <div className="px-2">
+                        )
+                    })}
+                    {/* <div className="px-2">
                         <div
                         className="item"
                         data-img="/images/content/showcase-1.back.jpg"
@@ -70,13 +78,13 @@ export default function ProductDetails() {
                             className="object-cover w-full h-full rounded-lg"
                         />
                         </div>
-                    </div>
+                    </div> */}
                     </div>
                     <div className="preview">
                     <div className="item rounded-lg h-full overflow-hidden">
                         <img
-                        src="/images/content/showcase-1.front.jpg"
-                        alt="front"
+                        src={slider}
+                        alt={slider}
                         className="object-cover w-full h-full rounded-lg"
                         />
                     </div>
@@ -84,8 +92,8 @@ export default function ProductDetails() {
                 </div>
                 </div>
                 <div className="flex-1 px-4 md:p-6">
-                <h2 className="text-5xl font-semibold">Chair Thatty</h2>
-                <p className="text-xl">IDR 12.000.000</p>
+                <h2 className="text-5xl font-semibold">{data.title}</h2>
+                <p className="text-xl mt-2">IDR {data.price}</p>
 
                 <a
                     href="cart.html"

@@ -8,6 +8,7 @@ const defaultState =  {
     data : null, status: "idle", error: null
 }
 export default function useAsync(initialState) {
+  // console.log("ini dia si jali jali : ", initialState)
     // const [{data, status, error}, setState] = useState({...defaultState, ...initialState})
     const initialStateRef = useRef({
         ...defaultState, ... initialState
